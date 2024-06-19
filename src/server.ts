@@ -10,6 +10,6 @@ app.use(requestLogger);
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-console.log(`Wubby API running on port ${port}`);
+console.log(`API running on port ${port}`);
 
 await app.listen({ port: +port });

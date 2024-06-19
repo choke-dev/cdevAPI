@@ -1,5 +1,7 @@
 import { Context, Next } from "https://deno.land/x/oak@14.2.0/mod.ts"
 
+
+// auth([ "test1", "test2" ])
 const auth = (requiredApiKeys: string[]) => {
     return async (ctx: Context, next: Next) => {
         const apiKey = ctx.request.headers.get('Authorization');

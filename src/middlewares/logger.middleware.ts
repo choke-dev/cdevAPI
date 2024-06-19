@@ -4,6 +4,8 @@ import { sql } from '../services/database.service.ts';
 const requestLogger = async (ctx: Context, next: Next) => {
     await next();
 
+    if (!sql) return;
+
     const requestUUID = crypto.randomUUID();
     const requestTimestamp = new Date().toISOString();
     const requestUseragent = ctx.request.userAgent;
